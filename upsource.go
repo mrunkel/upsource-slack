@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"reflect"
 )
 
 // Request request
@@ -150,24 +149,6 @@ type ParticipantState string
 
 // ReviewState request
 type ReviewState string
-
-var typeMap = map[string]reflect.Type{
-	"ReviewCreatedFeedEventBean":                reflect.TypeOf(ReviewCreatedFeedEventBean{}),
-	"ReviewRemovedFeedEventBean":                reflect.TypeOf(ReviewRemovedFeedEventBean{}),
-	"ReviewSquashedFeedEventBean":               reflect.TypeOf(ReviewSquashedFeedEventBean{}),
-	"ReviewStateChangedFeedEventBean":           reflect.TypeOf(ReviewStateChangedFeedEventBean{}),
-	"ReviewStoppedBranchTrackingFeedEventBean":  reflect.TypeOf(ReviewStoppedBranchTrackingFeedEventBean{}),
-	"RevisionAddedToReviewFeedEventBean":        reflect.TypeOf(RevisionAddedToReviewFeedEventBean{}),
-	"RevisionRemovedFromReviewFeedEventBean":    reflect.TypeOf(RevisionRemovedFromReviewFeedEventBean{}),
-	"RemovedParticipantFromReviewFeedEventBean": reflect.TypeOf(RemovedParticipantFromReviewFeedEventBean{}),
-	"PullRequestMergedFeedEventBean":            reflect.TypeOf(PullRequestMergedFeedEventBean{}),
-	"ParticipantStateChangedFeedEventBean":      reflect.TypeOf(ParticipantStateChangedFeedEventBean{}),
-	"NewRevisionEventBean":                      reflect.TypeOf(NewRevisionEventBean{}),
-	"NewParticipantInReviewFeedEventBean":       reflect.TypeOf(NewParticipantInReviewFeedEventBean{}),
-	"NewBranchEventBean":                        reflect.TypeOf(NewBranchEventBean{}),
-	"MergedToDefaultBranchEventBean":            reflect.TypeOf(MergedToDefaultBranchEventBean{}),
-	"DiscussionFeedEventBean":                   reflect.TypeOf(DiscussionFeedEventBean{}),
-}
 
 //Parse parse request upsource
 func Parse(body []byte, domain string) Request {
