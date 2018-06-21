@@ -1,4 +1,4 @@
-# upsource-slack
+# Upsource Slack integration
 
 Port from upsource webhook to slack notifications
 
